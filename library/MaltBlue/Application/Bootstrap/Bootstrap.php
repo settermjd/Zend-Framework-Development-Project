@@ -196,21 +196,6 @@ class MaltBlue_Application_Bootstrap_Bootstrap extends Zend_Application_Bootstra
         return $cache;
     }
 
-    protected function _initPaginator()
-    {
-        $this->bootstrap('cache');
-        $cache = $this->getResource('cache');
-
-        if (!is_null($cache)) {
-        	Zend_Paginator::setCache($cache);
-        }        
-        Zend_Paginator::setDefaultScrollingStyle('Sliding');
-        Zend_Paginator::setDefaultItemCountPerPage(self::DEFAULT_RECORDS_PER_PAGE);
-        Zend_View_Helper_PaginationControl::setDefaultViewPartial(
-            '/pagination/default_pagination_control.phtml'
-        );
-    }
-
     /**
      * Setup the core config resource
      *

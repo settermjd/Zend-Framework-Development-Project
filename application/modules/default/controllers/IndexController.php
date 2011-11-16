@@ -10,7 +10,10 @@ class IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $paginator = Zend_Paginator::factory(range(1, 50));
+        $paginator->setCurrentPageNumber($this->_getParam('page', 1));
+        $paginator->setView($this->view);
+        $this->view->paginator = $paginator;
     }
     
 }
