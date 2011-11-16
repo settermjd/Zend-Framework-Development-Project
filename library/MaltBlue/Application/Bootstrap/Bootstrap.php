@@ -212,54 +212,6 @@ class MaltBlue_Application_Bootstrap_Bootstrap extends Zend_Application_Bootstra
         
         return $config;
     } 
-    
-    /**
-     * Sets up the ZF Debug plugin.
-     *
-     * This displays a bar that gives debug statistics about the application
-     * @see http://code.google.com/p/zfdebug/
-     * @link http://code.google.com/p/zfdebug/wiki/Documentation
-     */
-/*    protected function _initZFDebug()
-    {
-        $autoloader = Zend_Loader_Autoloader::getInstance();
-        $autoloader->registerNamespace('ZFDebug');
-
-        $options = array(
-            'plugins' => array('Variables',
-                               'File' => array('base_path' => APPLICATION_PATH),
-                               'Html',
-                               'Memory',
-                               'Time',
-                               'Registry',
-                               'Exception'),
-            'z-index' => 255,
-            'image_path' => '/images/debugbar',
-            'jquery_path' => 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js',
-        );
-
-        // Instantiate the database adapter and setup the plugin.
-        // Alternatively just add the plugin like above and rely on the autodiscovery feature.
-        if ($this->hasPluginResource('Db')) {
-            $this->bootstrap('Db');
-            $db = $this->getPluginResource('Db')->getDbAdapter();
-            $options['plugins']['Database']['adapter'] = $db;
-        }
-
-        // Setup the cache plugin
-        if ($this->hasPluginResource('Cache')) {
-            $this->bootstrap('Cache');
-            $cache = $this-getPluginResource('Cache')->getDbAdapter();
-            $options['plugins']['Cache']['backend'] = $cache->getBackend();
-        }
-
-        $debug = new ZFDebug_Controller_Plugin_Debug($options);
-
-        $this->bootstrap('frontController');
-        $frontController = $this->getResource('frontController');
-        $frontController->registerPlugin($debug);
-    }
-*/
 
 }
 
